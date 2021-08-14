@@ -1,0 +1,36 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  port     = 5432
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  role      Role
+  email     String
+  phone     String
+  password  String
+  verified  Boolean
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  profile   Profile?
+}
+
+model Profile {
+  id        Int    @id @default(autoincrement())
+  userId    Int
+  firstName String
+  lastName  String
+  user      User   @relation(fields: [userId], references: [id])
+
+
+}
+
+enum Role {
+  USER
+  ADMIN
+}

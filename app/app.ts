@@ -5,18 +5,12 @@ import config from './config/index';
 import Logger from './lib/logger';
 
 
-let startExpress = () => {
-  return express();
-}
 
-let startFastify = () => {
-  return fastify();
-}
 
 
 
 async function startServer() {
-  let app = config.serverType === 'express' ? startExpress() : startFastify();
+  let app = config.serverType === 'express' ? express() : fastify();
   await require('./lib').default({ serverApp: app });
   app && app.listen(config.port, (err: any) => {
     if (err) {

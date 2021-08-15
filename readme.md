@@ -48,6 +48,8 @@ LOG_LEVEL='debug'
 - PrismaJS
 - TypeDI (dependency injector)
 - winston ( logging Mechanism )
+- celebrate
+- express-jwt
 
 
 ## ABOUT AUTHOR

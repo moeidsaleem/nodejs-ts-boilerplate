@@ -10,22 +10,22 @@ generator client {
 
 model User {
   id        Int      @id @default(autoincrement())
-  role      Role
-  email     String
-  phone     String
+  firstName String?
+  lastName  String?
+  role      Role?    @default(USER)
+  email     String   @unique
+  salt      String?
+  phone     String?
   password  String
-  verified  Boolean
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  profile   Profile?
+  verified  Boolean? @default(false)
+  createdAt DateTime? @default(now())
+  updatedAt DateTime? @updatedAt
 }
 
 model Profile {
   id        Int    @id @default(autoincrement())
   userId    Int
-  firstName String
-  lastName  String
-  user      User   @relation(fields: [userId], references: [id])
+
 
 
 }

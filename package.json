@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint . --fix",
+    "lint": "npx eslint . --fix",
     "start": "npx ts-node src/main.ts",
     "dev": "tsc && ts-node-dev --respawn --transpile-only ./src/main.ts",
     "prod": "tsc && node ./dist/app.js"
@@ -29,11 +29,10 @@
     "agenda": "^5.0.0",
     "dotenv": "^16.0.3",
     "eslint": "^8.27.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.7.1",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
+    "tslint": "^6.1.3",
     "typedi": "^0.10.0",
     "typescript": "^4.8.4"
   },

@@ -8,9 +8,9 @@ import { ISample, ISampleInput } from "../interfaces/ISample";
 export default class SampleService {
   constructor(@Inject("logger") private logger) {}
 
-  public async PrintSampleInfo(): Promise<{ user: any }> {
+  public async PrintSampleInfo(): Promise<{ response: any }> {
     this.logger.silly("Calling PrintSampleInfo");
 
-    return { user: "" };
+    return { response: "" };
   }
 }

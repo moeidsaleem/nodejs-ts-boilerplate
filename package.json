@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "start": "npx ts-node src/main.ts",
+    "dev": "tsc && ts-node-dev --respawn --transpile-only ./src/main.ts",
+    "prod": "tsc && node ./dist/app.js"
   },
   "repository": {
     "type": "git",
@@ -23,12 +26,24 @@
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
+    "agenda": "^5.0.0",
     "dotenv": "^16.0.3",
     "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
     "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typedi": "^0.10.0",
     "typescript": "^4.8.4"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "@types/cors": "^2.8.12",
+    "@types/method-override": "^0.0.32",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "method-override": "^3.0.0",
+    "winston": "^3.8.2"
   }
 }
